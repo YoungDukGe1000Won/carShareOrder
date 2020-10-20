@@ -92,7 +92,7 @@ phases:
                   imagePullPolicy: Always
                   readinessProbe:
                     httpGet:
-                      path: /actuator/health
+                      path: /
                       port: 8080
                     initialDelaySeconds: 30
                     timeoutSeconds: 2
@@ -100,7 +100,7 @@ phases:
                     failureThreshold: 10
                   livenessProbe:
                     httpGet:
-                      path: /actuator/health
+                      path: /
                       port: 8080
                     initialDelaySeconds: 120
                     timeoutSeconds: 2
