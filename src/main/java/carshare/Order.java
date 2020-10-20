@@ -8,6 +8,7 @@ import java.util.List;
 @Table(name="Order_table")
 public class Order {
 
+    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
