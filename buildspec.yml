@@ -37,6 +37,7 @@ phases:
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$_AWS_REGION.amazonaws.com/$_ECR_NAME-$_PROJECT_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
       
+      
 #cache:
 #  paths:
 #    - '/root/.m2/**/*'
