@@ -25,7 +25,8 @@ phases:
       - echo $_AWS_REGION
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo start command
-      - docker login --username AWS -p $(aws ecr get-login-password --region ap-southeast-2) 496278789073.dkr.ecr.ap-southeast-2.amazonaws.com
+      - $(aws ecr get-login --no-include-email --region $_AWS_REGION)
+      #- docker login --username AWS -p $(aws ecr get-login-password --region ap-southeast-2) 496278789073.dkr.ecr.ap-southeast-2.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
