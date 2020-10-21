@@ -61,18 +61,6 @@ phases:
           selector:
             app: $_PROJECT_NAME
         EOF
-
-      - |
-        cat <<EOF | kubectl apply -f -
-        apiVersion: apps/v1
-        kind: ConfigMap
-        metadata:
-          name: my-config
-          namespace: carshare
-        data:
-          api.payment.url: http://carsharepayment:8080
-        EOF
-        
       - |
         cat  <<EOF | kubectl apply -f -   
         apiVersion: apps/v1
