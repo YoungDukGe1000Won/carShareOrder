@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: my-config
-  namespace: carshare
-data:
-  api.payment.url: http://carsharepayment:8080
