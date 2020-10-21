@@ -89,6 +89,12 @@ phases:
                       cpu: 500m
                     requests:
                       cpu: 200m
+                  env:
+                    - name: api.carshareorder.url
+                      valueFrom:
+                        configMapKeyRef:
+                          name: my-config
+                          key: api.carshareorder.url
                   imagePullPolicy: Always
                   readinessProbe:
                     httpGet:
