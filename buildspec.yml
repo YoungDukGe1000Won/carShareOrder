@@ -61,9 +61,9 @@ phases:
           selector:
             app: $_PROJECT_NAME
         EOF
+
       - |
-        cat  <<EOF | kubectl apply -f -
-        #my-config를 위한 내용추가
+        cat <<EOF | kubectl apply -f -
         apiVersion: apps/v1
         kind: ConfigMap
         metadata:
@@ -71,8 +71,11 @@ phases:
           namespace: carshare
         data:
           api.payment.url: http://carsharepayment:8080
-     
-        #apiVersion: apps/v1
+        EOF
+        
+      - |
+        cat  <<EOF | kubectl apply -f -   
+        apiVersion: apps/v1
         kind: Deployment
         metadata:
           name: $_PROJECT_NAME
