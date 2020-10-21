@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+  namespace: carshare
+data:
+  api.carshareorder.url: http://carshareorder:8080
