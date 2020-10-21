@@ -22,11 +22,8 @@ public class Order {
         BeanUtils.copyProperties(this, ordered);
         ordered.publishAfterCommit();
 
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
         carshare.external.Payment payment = new carshare.external.Payment();
-        // mappings goes here
+
         payment.setOrderId(this.getId());
         payment.setProductId(this.getProductId());
         payment.setQty(this.getQty());
