@@ -4,4 +4,4 @@ metadata:
   name: my-config
   namespace: carshare
 data:
-  api.carshareorder.url: http://carshareorder:8080
+  api.payment.url: http://carsharepayment:8080
