@@ -43,6 +43,17 @@ phases:
       - kubectl config set-credentials admin --token="$KUBE_TOKEN"
       - kubectl config set-context default --cluster=k8s --user=admin
       - kubectl config use-context default
+      #my-config를 위한 내용추가
+      - cat <<EOF | kubectl apply -f -
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          name: my-config
+          namespace: carshare
+        data:
+          api.payment.url: http://carsharepayment:8080
+        EOF
+        
       - kubectl create ns $_NAMESPACE || true
       - |
         cat <<EOF | kubectl apply -f -
